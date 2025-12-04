@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Loader2, Mail, MessageSquare, Heart, Sparkles, User } from "lucide-react"
+import { Loader2, Mail, MessageSquare, Heart, User } from "lucide-react"
 import { Cormorant_Garamond } from "next/font/google"
 
 const cormorant = Cormorant_Garamond({
@@ -199,12 +199,12 @@ export function BookOfGuests() {
                 {guests.map((guest, index) => (
                   <div
                     key={index}
-                    className="group relative bg-white/10 backdrop-blur-sm rounded-md sm:rounded-lg p-2.5 sm:p-3 md:p-4 border border-[#FDECEF]/30 hover:border-[#FDECEF]/50 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:bg-white/15"
+                    className="group relative bg-white rounded-md sm:rounded-lg p-2.5 sm:p-3 md:p-4 border border-[#660033]/20 hover:border-[#660033]/40 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(102,0,51,0.15)] hover:shadow-lg"
                   >
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                       {/* Avatar */}
                       <div className="relative h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex-shrink-0">
-                        <div className="h-full w-full rounded-full bg-[#660033] text-white flex items-center justify-center font-semibold shadow-md ring-2 ring-white/20 text-[10px] sm:text-xs md:text-sm">
+                        <div className="h-full w-full rounded-full bg-[#660033] text-white flex items-center justify-center font-semibold shadow-md ring-2 ring-[#660033]/20 text-[10px] sm:text-xs md:text-sm">
                           {getInitials(guest.Name)}
                         </div>
                       </div>
@@ -213,20 +213,20 @@ export function BookOfGuests() {
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 sm:gap-2">
                           <div className="flex-1 min-w-0">
-                            <h4 className={`${cormorant.className} text-sm sm:text-base md:text-lg font-semibold text-white mb-0.5 group-hover:text-[#FDECEF] transition-colors duration-200 truncate`}>
+                            <h4 className={`${cormorant.className} text-sm sm:text-base md:text-lg font-semibold text-[#660033] mb-0.5 group-hover:text-[#4d0026] transition-colors duration-200 truncate`}>
                               {guest.Name}
                             </h4>
                             {guest.Email && guest.Email !== "Pending" && (
-                              <div className="flex items-center text-[10px] sm:text-xs text-white/70">
-                                <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1 text-white/60 flex-shrink-0" />
+                              <div className="flex items-center text-[10px] sm:text-xs text-[#660033]/75">
+                                <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1 text-[#660033]/60 flex-shrink-0" />
                                 <span className={`${cormorant.className} break-all truncate`}>{guest.Email}</span>
                               </div>
                             )}
                           </div>
                           {/* Guest count badge */}
                           <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
-                            <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/70 flex-shrink-0" />
-                            <span className={`${cormorant.className} inline-flex items-center justify-center px-2 sm:px-2.5 py-0.5 sm:py-1 bg-white/10 text-white rounded-full text-[10px] sm:text-xs font-semibold border border-white/30 whitespace-nowrap`}>
+                            <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#660033]/70 flex-shrink-0" />
+                            <span className={`${cormorant.className} inline-flex items-center justify-center px-2 sm:px-2.5 py-0.5 sm:py-1 bg-[#660033]/10 text-[#660033] rounded-full text-[10px] sm:text-xs font-semibold border border-[#660033]/30 whitespace-nowrap`}>
                               {guest.Guest ? (parseInt(String(guest.Guest)) || 1) : 1} {parseInt(String(guest.Guest || '1')) === 1 ? 'guest' : 'guests'}
                             </span>
                           </div>
@@ -234,10 +234,10 @@ export function BookOfGuests() {
                         
                         {/* Message */}
                         {guest.Message && (
-                          <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/20">
+                          <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-[#660033]/20">
                             <div className="flex items-start gap-1.5 sm:gap-2">
-                              <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/60 flex-shrink-0 mt-0.5" />
-                              <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm text-white/80 leading-relaxed italic flex-1`}>
+                              <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#660033]/60 flex-shrink-0 mt-0.5" />
+                              <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm text-[#660033]/85 leading-relaxed italic flex-1`}>
                                 "{guest.Message}"
                               </p>
                             </div>

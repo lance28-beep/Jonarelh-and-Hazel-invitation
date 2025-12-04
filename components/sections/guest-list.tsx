@@ -300,7 +300,7 @@ export function GuestList() {
             A courtesy of reply is appreciated. Please RSVP on or before:
           </p>
           <p className="font-semibold text-[#FDECEF]">
-            December 1, 2025
+          December 14, 2025
           </p>
         </div>
         
