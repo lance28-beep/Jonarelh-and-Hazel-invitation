@@ -7,7 +7,7 @@ export const siteConfig = {
   },
   wedding: {
     date: "December 21, 2025",
-    time: "3:00 PM, PH Time",
+    time: "1:00 PM, PH Time",
     venue: "Gutapol SDA Church, located at Gutapol, Kibawe, Bukidnon",
     tagline: "are getting married!",
     theme: "Spring Theme, Water Paint flowers (Garden wedding)",
